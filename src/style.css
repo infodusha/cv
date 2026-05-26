@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: inherit;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+main.graph {
+  --paper: light-dark(#fafaf6, #15171a);
+  --ink: light-dark(#1a1c1f, #ecebe5);
+  --dim: light-dark(#6b6963, #9a9890);
+  --link: light-dark(#2b3d8a, #9eb0ea);
+  --link-bg: light-dark(#cfd4ec, #283261);
+  --hot-bg: light-dark(#ffe97a, #5e4d12);
+  --hot-bg-soft: light-dark(#fdeeb2, #3a3010);
+  --rule: light-dark(#d4d2c7, #2d2e2a);
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Fira Mono", ui-monospace, monospace;
+  font-size: 14.5px;
+  line-height: 1.78;
+  min-height: 100vh;
+  padding: clamp(2rem, 5vw, 4rem);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.note {
+  margin: 0 0 3.5rem;
+}
+.note h2 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+.note h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--dim);
+  margin: 1.4rem 0 0.3rem;
+  letter-spacing: 0.01em;
+}
+.note p {
+  margin: 0 0 0.8rem;
+  max-width: 64ch;
+}
+
+.dim {
+  color: var(--dim);
+}
+.key {
+  margin-right: 0.2rem;
+}
+
+.linklist {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+.linklist a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+.linklist a:hover {
+  background: var(--link-bg);
+}
