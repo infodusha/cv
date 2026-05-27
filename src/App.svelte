@@ -5,12 +5,16 @@
   import Concepts from "./lib/Concepts.svelte";
   import Etc from "./lib/Etc.svelte";
   import Contact from "./lib/Contact.svelte";
+  import ThemeToggle from "./lib/ThemeToggle.svelte";
 </script>
 
 <main class="graph">
   <header>
-    <h1>andrei.karushev</h1>
-    <p class="meta">a small personal wiki · last edited {__BUILD_DATE__}</p>
+    <div class="title">
+      <h1>andrei.karushev</h1>
+      <p class="meta">a small personal wiki · last edited {__BUILD_DATE__}</p>
+    </div>
+    <ThemeToggle />
   </header>
 
   <Bio />
@@ -23,7 +27,14 @@
 
 <style>
   header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 3rem;
+  }
+  .title {
+    min-width: 0;
   }
   header h1 {
     font-size: 1.4rem;
