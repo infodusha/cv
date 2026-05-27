@@ -13,7 +13,7 @@
 </script>
 
 <a class="link" data-concept={id} href={`#${id}`} {onclick}>
-  [[<span class="label">{concepts[id].label}</span>]]
+  [[<span class="label">{concepts[id].label.replaceAll(" ", " ")}</span>]]
 </a>
 
 <style>
