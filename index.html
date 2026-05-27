@@ -30,8 +30,7 @@
   </head>
   <body>
     <script type="module">
-      var t = localStorage.getItem("theme");
-      if (t === "light" || t === "dark") document.documentElement.style.colorScheme = t;
+      import "/src/theme.svelte.ts";
     </script>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>

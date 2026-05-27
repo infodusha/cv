@@ -1,30 +1,16 @@
 <script lang="ts">
-  type Theme = "light" | "dark";
-
-  function currentTheme(): Theme {
-    const saved = localStorage.getItem("theme");
-    if (saved === "light" || saved === "dark") return saved;
-    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-
-  let theme = $state<Theme>(currentTheme());
-
-  function toggle() {
-    theme = theme === "dark" ? "light" : "dark";
-    document.documentElement.style.colorScheme = theme;
-    localStorage.setItem("theme", theme);
-  }
+  import { theme } from "./theme.svelte";
 </script>
 
 <button
   class="toggle"
   type="button"
   aria-label="Toggle theme"
-  aria-pressed={theme === "dark"}
-  title="theme: {theme}"
-  onclick={toggle}
+  aria-pressed={theme.current === "dark"}
+  title="theme: {theme.current}"
+  onclick={() => theme.toggle()}
 >
-  {#if theme === "dark"}
+  {#if theme.current === "dark"}
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
       <circle cx="12" cy="12" r="4" fill="currentColor" />
       <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
